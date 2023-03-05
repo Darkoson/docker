@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  # React App
+  nest1:
+    extends:
+      file: docker-compose.base.yml
+      service: nx-app-base
+    command: npm run start:prod-api
+    ports:
+      - 4201:3333
+
+  # React App
+  react1:
+    extends:
+      file: docker-compose.base.yml
+      service: nx-app-base
+    command: npm run start:prod-web
+    ports:
+      - 4202:3000
+
+volumes:
+  mono-node-modules: null

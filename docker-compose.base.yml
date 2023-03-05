@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nx-app-base:
+    restart: on-failure
+    image: nx-app-base
+    build:
+      context: .
+      dockerfile: Dockerfile
+      container_name: app-base
+    volumes:
+      - ./:/app
+      # - mono-node-modules:/app/node_modules
